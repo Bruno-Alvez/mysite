@@ -8,7 +8,6 @@ from blog.models import Post
 
 faker = FakerFactory.create()
 
-
 class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = User
@@ -25,7 +24,6 @@ class UserFactory(factory.django.DjangoModelFactory):
             if create:
                 user.save()
             return user
-
 
 class PostFactory(factory.django.DjangoModelFactory):
     title = factory.LazyAttribute(lambda x: faker.sentence())
