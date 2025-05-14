@@ -23,7 +23,7 @@ class UserFactory(factory.django.DjangoModelFactory):
             user.set_password(password)
             if create:
                 user.save()
-        return user
+            return user
 
 class PostFactory(factory.django.DjangoModelFactory):
     title = factory.LazyAttribute(lambda x: faker.sentence())
