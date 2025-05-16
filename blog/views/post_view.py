@@ -1,0 +1,12 @@
+from django.views import generic
+from django.views.generic import ListView
+from blog.models import Post
+from django.http import HttpResponse
+
+class PostView(generic.ListView):
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = 'blog/index.html'
+
+class PostDetail(generic.DetailView):
+    model = Post
+    template_name = "post_detail.html"
